@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.31d6cfe0.css",
-    "main.js": "/static/js/main.979a9d78.js",
-    "index.html": "/index.html",
-    "main.979a9d78.js.map": "/static/js/main.979a9d78.js.map"
+    "main.css": "/bcs-project-2022/static/css/main.31d6cfe0.css",
+    "main.js": "/bcs-project-2022/static/js/main.979a9d78.js",
+    "index.html": "/bcs-project-2022/index.html",
+    "main.979a9d78.js.map": "/bcs-project-2022/static/js/main.979a9d78.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
