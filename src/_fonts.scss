@@ -1,0 +1,48 @@
+/* Fonts */
+
+$light: 300;
+$regular: 400;
+$semiBold: 600;
+$bold: 700;
+
+@mixin fontType($type: 1) {
+    @if $type == 1 {
+        font-weight: $semiBold;
+        font-size: 36px;
+    }
+
+    @if $type == 2 {
+        font-weight: $bold;
+        font-size: 24px;
+    }
+
+    @if $type == 3 {
+        font-weight: $regular;
+        font-size: 24px;
+    }
+    @if $type == 4 {
+        font-weight: $light;
+        font-size: 24px;
+    }
+    @if $type == 5 {
+        font-weight: $semiBold;
+        font-size: 18px;
+    }
+    @if $type == 6 {
+        font-weight: $regular;
+        font-size: 18px;
+    }
+    @if $type == 7 {
+        font-weight: $semiBold;
+        font-size: 16px;
+    }
+    @if $type == 8 {
+        font-weight: $regular;
+        font-size: 14px;
+    }
+
+    @if $type == 9 {
+        font-weight: $regular;
+        font-size: 16px;
+    }
+}

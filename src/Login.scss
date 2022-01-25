@@ -1,0 +1,73 @@
+@import "variables";
+@import "fonts";
+@import "icons";
+
+.login-wrapper {
+    .login-inner {
+        padding: 0 42px 0 42px;
+        line-height: 20px;
+        height: 275px;
+    }
+
+    .login-header {
+        text-align: right;
+    }
+    .login-heading-line-1-1 {
+        @include fontType(3);
+    }
+    .login-heading-line-1-2 {
+        @include fontType(4);
+        margin-left: 5px;
+    }
+    .login-form {
+        padding-top: 28px;
+
+        .login-field {
+            padding-bottom: 20px;
+        }
+
+        .login-label {
+            @include fontType(9);
+            display: block;
+            color: $color-2;
+            margin-bottom: 7px;
+        }
+        .login-input {
+            @include fontType(9);
+            border: none;
+            width: 100%;
+            border-bottom-color: $color-9;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-radius: 0;
+            padding: 0
+        }
+        .login-button {
+            @include fontType(6);
+            background-color: $color-9;
+            color: $color-0;
+            padding: 8px 20px 8px 20px;
+            margin-top: 40px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            border: none;
+            -webkit-appearance: none;
+        }
+    }
+
+    .login-forgot-password {
+        @include fontType(8);
+        color: $color-2;
+        margin: auto;
+        margin-top: 40px;
+        text-align: center;
+        width: 136px;
+        display: block;
+    }
+
+    footer {
+        padding: 0;
+        position: absolute;
+        bottom: -5px;
+    }
+}

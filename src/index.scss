@@ -1,47 +1,13 @@
 @import "variables";
 
+
+
 body {
     font-family: "Source Sans Pro", sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
-/* Fonts */
-
-.font-type-1 {
-    font-weight: 600;
-    font-size: 36px;
-}
-
-.font-type-2 {
-    font-weight: 700;
-    font-size: 24px;
-}
-
-.font-type-3 {
-    font-weight: 400;
-    font-size: 24px;
-}
-
-.font-type-4 {
-    font-weight: 300;
-    font-size: 24px;
-}
-
-.font-type-5 {
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.font-type-6 {
-    font-weight: 400;
-    font-size: 18px;
-}
-
-.font-type-7 {
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.font-type-8 {
-    font-weight: 400;
-    font-size: 14px;
+input{
+    font-family: "Source Sans Pro", sans-serif;
 }
