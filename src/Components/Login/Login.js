@@ -1,6 +1,6 @@
 import React from 'react';
-import vector01 from './images/app-vec-01.svg';
-import vector02 from './images/app-vec-02.svg';
+import vector01 from '../../Assets/images/app-vec-01.svg';
+import vector02 from '../../Assets/images/app-vec-02.svg';
 import './Login.scss';
 
 export default function Login() {
@@ -28,7 +28,8 @@ export default function Login() {
                     <div className="login-field">
                         <span className="login-label">Password</span>
                         <span className="icon-eye-show-svgrepo-com-1">
-                            <input className="login-input" type="password" required />
+                            <input className="login-input" type="password"  required />
+                            <span className="icon-eye-show"></span>
                         </span>
                     </div>
 
@@ -40,7 +41,7 @@ export default function Login() {
 
             </section>
             <footer>
-                <img alt="Header Vecto r" src={vector02} />
+                <img alt="Footer Vector" src={vector02} />
             </footer>
         </div>
     )

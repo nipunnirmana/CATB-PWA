@@ -1,9 +1,9 @@
 @font-face {
     font-family: "icomoon";
-    src: url("fonts/icomoon.eot?ubty5w");
-    src: url("fonts/icomoon.eot?ubty5w#iefix") format("embedded-opentype"),
-        url("fonts/icomoon.ttf?ubty5w") format("truetype"), url("fonts/icomoon.woff?ubty5w") format("woff"),
-        url("fonts/icomoon.svg?ubty5w#icomoon") format("svg");
+    src: url("../Assets/fonts/icomoon.eot?ubty5w");
+    src: url("../Assets/fonts/icomoon.eot?ubty5w#iefix") format("embedded-opentype"),
+        url("../Assets/fonts/icomoon.ttf?ubty5w") format("truetype"), url("../Assets/fonts/icomoon.woff?ubty5w") format("woff"),
+        url("../Assets/fonts/icomoon.svg?ubty5w#icomoon") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -31,12 +31,12 @@
 .icon-eye-hide-svgrepo-com-1:before {
     content: "\e901";
 }
-.icon-eye-show-svgrepo-com-1:after {
+.icon-eye-show:after {
     content: "\e902";
     float: right;
     margin-bottom: 15px;
     position: relative;
-    top: -25px;
+    top: -20px;
     font-size: 18px;
     background-color: #ffffff;
 }

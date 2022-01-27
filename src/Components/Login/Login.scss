@@ -1,6 +1,7 @@
-@import "variables";
-@import "fonts";
-@import "icons";
+@import "../../Styles/variables";
+@import "../../Styles/fonts";
+@import "../../Styles/icons";
+
 
 .login-wrapper {
     .login-inner {
@@ -11,6 +12,10 @@
 
     .login-header {
         text-align: right;
+        img{
+            width: 199px;
+            height: 233px;
+        }
     }
     .login-heading-line-1-1 {
         @include fontType(3);
@@ -65,9 +70,11 @@
         display: block;
     }
 
-    footer {
+    footer img{
         padding: 0;
         position: absolute;
-        bottom: -5px;
+        bottom: 0px;
+        width: 188px;
+        height: 191px;
     }
 }
