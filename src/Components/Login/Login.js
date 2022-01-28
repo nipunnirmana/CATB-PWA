@@ -21,8 +21,6 @@ export default function Login() {
             </header>
             <section className="login-inner">
 
-                <h1>LOGGED IN ? {isLoggedIn ? 'YES' : 'NO'}</h1>
-
                 <div>
                     <span className="login-heading-line-1-1">Colombo</span>
                     <span className="login-heading-line-1-2">Airport</span>
@@ -46,7 +44,7 @@ export default function Login() {
                         </span>
                     </div>
 
-                    <input className="login-button" type="button" value="login" onClick={onButtonClicked} />
+                    <input className="login-button" type="submit" value="login" onClick={onButtonClicked} />
 
                 </form>
 

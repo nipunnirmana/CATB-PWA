@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Login from './Components/Login/Login';
+import App from './App';
 import Store from './Store/MyStore';
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <Store>
-      <Login />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Store>
   </React.StrictMode>,
   document.getElementById('root')
