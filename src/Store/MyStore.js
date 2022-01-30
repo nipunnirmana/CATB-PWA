@@ -4,7 +4,8 @@ import Reducer from './MyReducer';
 
 
 const initialState = {
-    isLoggedIn: false
+    isLoggedIn: false,
+    isLoading: false
 };
 
 const Store = ({ children }) => {

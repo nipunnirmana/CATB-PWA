@@ -2,7 +2,6 @@
 @import "../../Styles/fonts";
 @import "../../Styles/icons";
 
-
 .login-wrapper {
     .login-inner {
         padding: 0 42px 0 42px;
@@ -12,9 +11,10 @@
 
     .login-header {
         text-align: right;
-        img{
+        img {
             width: 199px;
             height: 233px;
+            z-index: -1;
         }
     }
     .login-heading-line-1-1 {
@@ -45,7 +45,7 @@
             border-bottom-style: solid;
             border-bottom-width: 1px;
             border-radius: 0;
-            padding: 0
+            padding: 0;
         }
         .login-button {
             @include fontType(6);
@@ -70,11 +70,17 @@
         display: block;
     }
 
-    footer img{
+    footer img {
         padding: 0;
         position: absolute;
         bottom: 0px;
         width: 188px;
         height: 191px;
+        z-index: -1;
+    }
+
+    .form-error {
+        color: $color-11;
+        @include fontType(7);
     }
 }

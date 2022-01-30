@@ -2,56 +2,55 @@
     font-family: "icomoon";
     src: url("../Assets/fonts/icomoon.eot?ubty5w");
     src: url("../Assets/fonts/icomoon.eot?ubty5w#iefix") format("embedded-opentype"),
-        url("../Assets/fonts/icomoon.ttf?ubty5w") format("truetype"), url("../Assets/fonts/icomoon.woff?ubty5w") format("woff"),
+        url("../Assets/fonts/icomoon.ttf?ubty5w") format("truetype"),
+        url("../Assets/fonts/icomoon.woff?ubty5w") format("woff"),
         url("../Assets/fonts/icomoon.svg?ubty5w#icomoon") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
+[class^="icon-"] {
     font-family: "icomoon" !important;
-    speak: never;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-
-    /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-back-svgrepo-com-1:before {
-    content: "\e900";
-}
-.icon-eye-hide-svgrepo-com-1:before {
-    content: "\e901";
-}
-.icon-eye-show:after {
-    content: "\e902";
-    float: right;
+[class^="icon-eye-"] {
     margin-bottom: 15px;
     position: relative;
-    top: -20px;
     font-size: 18px;
     background-color: #ffffff;
+    padding-left: 10px;
+    float: right;
+    top: -22px;
+
+    &.icon-eye-show:after {
+        content: "\e902";
+    }
+
+    &.icon-eye-hide:after {
+        content: "\e901";
+    }
 }
-.icon-Icon---Settings:before {
+
+.icon-back:before {
+    content: "\e900";
+}
+.icon-settings:before {
     content: "\e903";
 }
-.icon-more-svgrepo-com-1:before {
+.icon-more:before {
     content: "\e904";
-    color: #838383;
 }
-.icon-Vector:before {
+.icon-radio-default:before {
     content: "\e905";
-    color: #a2a2a2;
 }
-.icon-Vector-1:before {
+.icon-radio-selected:before {
     content: "\e906";
-    color: #a2a2a2;
 }

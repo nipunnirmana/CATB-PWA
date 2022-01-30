@@ -1,18 +1,70 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { Context } from '../../Store/MyStore';
+import { IS_LOADING, IS_LOGGED_IN } from '../../Store/MyReducer';
 import vector01 from '../../Assets/images/app-vec-01.svg';
 import vector02 from '../../Assets/images/app-vec-02.svg';
 import './Login.scss';
-import { IS_LOGGED_IN } from '../../Store/MyReducer';
+import '../../fire';
+import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged
+} from "firebase/auth";
+
 
 export default function Login() {
 
-    const [{ isLoggedIn }, dispatch] = useContext(Context);
+    const [, dispatch] = useContext(Context);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [togglePassword, setTogglePassword] = useState(false);
 
-    const onButtonClicked = () => {
-        dispatch({ type: IS_LOGGED_IN, payload: true });
+
+    const handlePasswordToggle = () => {
+        setTogglePassword(!togglePassword);
     }
 
+    const handleLogin = () => {
+        const isInvalidEmail = !/\S+@\S+\.\S+/.test(email);
+        if (isInvalidEmail) {
+            setError('Please enter and valid email address');
+            return;
+        } else if (!password) {
+            setError('Password cannot be empty');
+            return;
+        } else {
+            setError('');
+        }
+        dispatch({ type: IS_LOADING, payload: true });
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                dispatch({ type: IS_LOGGED_IN, payload: true });
+            })
+            .catch(({ code = false }) => {
+                if (code === 'auth/wrong-password' || code === 'auth/user-not-found') {
+                    setError('You have entered an invalid email or password');
+                } else {
+                    setError('Something went wrong, Please try again');
+                }
+            }).finally(() => dispatch({ type: IS_LOADING, payload: false }));
+    };
+
+
+    const authListener = () => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // USER ALREADY LOGGED IN
+            }
+        });
+    }
+
+
+    useEffect(() => {
+        authListener();
+    }, [])
 
     return (
         <div className="login-wrapper">
@@ -31,20 +83,33 @@ export default function Login() {
                 </div>
 
                 <form className="login-form">
+
                     <div className="login-field">
                         <span className="login-label">Mobile Number</span>
-                        <input className="login-input" type="text" required />
+                        <input
+                            className="login-input"
+                            type="text"
+                            required value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
                     </div>
 
                     <div className="login-field">
                         <span className="login-label">Password</span>
-                        <span className="icon-eye-show-svgrepo-com-1">
-                            <input className="login-input" type="password" required />
-                            <span className="icon-eye-show"></span>
+                        <span className="icons">
+                            <input
+                                className="login-input"
+                                type={togglePassword ? "text" : "password"}
+                                required value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <span className={`icon-eye-${togglePassword ? 'hide' : 'show'}`} onClick={handlePasswordToggle}></span>
                         </span>
                     </div>
 
-                    <input className="login-button" type="submit" value="login" onClick={onButtonClicked} />
+                    <div className="form-error">{error}</div>
+
+                    <input className="login-button" type="button" value="login" onClick={handleLogin} />
 
                 </form>
 
