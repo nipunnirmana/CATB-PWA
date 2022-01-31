@@ -4,7 +4,7 @@ import Reducer from './MyReducer';
 
 
 const initialState = {
-    isLoggedIn: false,
+    isLoggedIn: localStorage.getItem('customer') || false,
     isLoading: false
 };
 

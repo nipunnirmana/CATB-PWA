@@ -54,9 +54,12 @@ export default function Login() {
 
     const authListener = () => {
         const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // USER ALREADY LOGGED IN
+        onAuthStateChanged(auth, ({ uid = false } = {}) => {
+            if (uid) {
+                localStorage.setItem('customer', JSON.stringify({ uid }));
+            } else {
+                localStorage.removeItem('customer');
+                dispatch({ type: IS_LOGGED_IN, payload: false });
             }
         });
     }
