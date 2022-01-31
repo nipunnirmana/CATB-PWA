@@ -20,7 +20,6 @@
     opacity: 0;
     z-index: -1;
     img {
-        animation: rotating 1s linear infinite;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -33,5 +32,8 @@
     &.is-loading {
         z-index: 1;
         opacity: 1;
+        img {
+            animation: rotating 1s linear infinite;
+        }
     }
 }
