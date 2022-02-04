@@ -1,13 +1,23 @@
 @import "./Styles/variables";
 
-
-
 body {
     font-family: "Source Sans Pro", sans-serif;
     padding: 0;
     margin: 0;
+
+    button {
+        font-family: "Source Sans Pro", sans-serif;
+    }
+
+    .app-wrapper {
+        .app-header {
+            background-image: url(Assets/images/header-gradient.png), url(Assets/images/app-vec-01.svg);
+            background-position: top left, top right;
+            background-repeat: repeat-x, no-repeat;
+        }
+    }
 }
 
-input{
+input {
     font-family: "Source Sans Pro", sans-serif;
 }

@@ -40,10 +40,14 @@
 }
 
 .icon-back:before {
+    font-size: 35px;
     content: "\e900";
 }
-.icon-settings:before {
-    content: "\e903";
+.icon-settings {
+    font-size: 25px;
+    &::before {
+        content: "\e903";
+    }
 }
 .icon-more:before {
     content: "\e904";

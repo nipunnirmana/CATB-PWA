@@ -1,0 +1,68 @@
+@import "../../Styles/variables";
+@import "../../Styles/mixins";
+@import "../../Styles/icons";
+
+.trip-wrapper {
+    .trip-header {
+        height: 261px;
+        .trip-header-inner {
+            padding: 40px 30px 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            .trip-id {
+                margin-left: auto;
+                @include fontType(2);
+            }
+        }
+    }
+
+    .trip {
+        margin-top: -123px;
+        .trip-status {
+            @include fontType(2);
+            padding: 0 0 0 30px;
+        }
+        .trip-basic-info {
+            margin-top: 25px;
+            padding: 0 0 0 30px;
+            .trip-start-end {
+                @include fontType(7);
+            }
+            .customer-name {
+                color: $color-4;
+                @include fontType(6);
+            }
+            margin-bottom: 24px;
+        }
+        .trip-info {
+            .label {
+                @include fontType(9);
+                color: $color-12;
+            }
+            .value {
+                @include fontType(7);
+            }
+            padding: 16px 0 16px 30px;
+            border-bottom: 1px solid $color-1;
+            &:last-of-type {
+                border: none;
+            }
+        }
+        .update-status {
+            @include fontType(7);
+            display: block;
+            padding: 26px 0 30px 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            text-decoration: none;
+            color: $color-0;
+            background-color: $color-9;
+            border: none;
+        }
+    }
+}

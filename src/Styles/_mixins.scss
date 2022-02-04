@@ -45,4 +45,19 @@ $bold: 700;
         font-weight: $regular;
         font-size: 16px;
     }
+
+    @if $type == 10 {
+        font-weight: $bold;
+        font-size: 18px;
+    }
+}
+
+@mixin tabColors($primary,$secondary) {
+    background-color: $primary;
+    &.active {
+        border-color: $secondary;
+        &:after {
+            background-color: $secondary;
+        }
+    }
 }
