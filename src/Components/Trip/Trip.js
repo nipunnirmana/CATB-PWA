@@ -16,6 +16,11 @@ export default function Trip() {
     const handleStatusChange = (value) => {
         dispatch({ type: OPTION_LIST, payload: {} });
         dispatch({ type: IS_LOADING, payload: true });
+
+        setTimeout(() => {
+            dispatch({ type: IS_LOADING, payload: false });
+        }, 1500)
+
     };
 
     useEffect(() => {

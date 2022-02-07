@@ -91,7 +91,7 @@ export default function Login() {
                 <form className="login-form">
 
                     <div className="login-field">
-                        <span className="login-label">Mobile Number</span>
+                        <span className="login-label">Email Address</span>
                         <input
                             className="login-input"
                             type="text"
