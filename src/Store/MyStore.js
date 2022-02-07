@@ -5,7 +5,8 @@ import Reducer from './MyReducer';
 
 const initialState = {
     isLoggedIn: localStorage.getItem('customer') || false,
-    isLoading: false
+    isLoading: false,
+    options: {}
 };
 
 const Store = ({ children }) => {

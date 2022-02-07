@@ -29,7 +29,7 @@ export default function Trips() {
                         <span className="text-type-two">Fernando, </span>
                         <span className="text-type-three">You have</span>
                     </div>
-                    <i className="icon-settings"></i>
+                    <Link to='/settings' className="icon-settings" />
                 </div>
                 <div className="tabs">
                     <div className="tab active scheduled" onClick={swapActive}>

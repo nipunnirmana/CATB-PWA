@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { useEffect, useContext, useState } from 'react';
+import { OPTION_LIST, IS_LOADING } from '../../Store/MyReducer';
+import { Context } from '../../Store/MyStore';
+import { useNavigate } from 'react-router-dom';
 
 import './Trip.scss';
 
 export default function Trip() {
 
+    const navigate = useNavigate();
+
+    const [, dispatch] = useContext(Context);
+
+    const [status, setStatus] = useState();
+
+    const handleStatusChange = (value) => {
+        dispatch({ type: OPTION_LIST, payload: {} });
+        dispatch({ type: IS_LOADING, payload: true });
+    };
+
+    useEffect(() => {
+        mockStatusDta()
+    });
+
+    const mockStatusDta = () => {
+        const statusData = {
+            title: 'UPDATE TRIP STATUS',
+            type: 'trip',
+            onClickEvent: handleStatusChange,
+            data: [
+                { name: 'firstOption', value: 1, selected: false },
+                { name: 'secondOption', value: 2, selected: true }
+            ]
+        }
+
+        setStatus(statusData)
+    }
+
     const goBack = () => {
-        window.history.back()
+        navigate('/')
+    }
+
+    const openStatusList = () => {
+        dispatch({ type: OPTION_LIST, payload: status });
     }
 
     return (
@@ -33,7 +69,7 @@ export default function Trip() {
                     <div className="value">Today at 08:10 AM</div>
                 </div>
 
-                <span className="update-status">UPDATE TRIP STATUS</span>
+                <span className="update-status" onClick={openStatusList}>UPDATE TRIP STATUS</span>
 
             </div>
 

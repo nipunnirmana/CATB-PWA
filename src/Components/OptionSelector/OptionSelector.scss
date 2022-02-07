@@ -1,0 +1,67 @@
+@import "../../Styles/variables";
+@import "../../Styles/mixins";
+@import "../../Styles/icons";
+
+.option-selector-wrapper {
+    .list-item {
+        vertical-align: middle;
+
+        .icon-radio {
+            &-default,
+            &-selected {
+                color: $color-2;
+                font-size: 24px;
+                margin-left: 30px;
+                margin-right: 36px;
+            }
+        }
+        border-bottom: 1px solid $color-13;
+        &:last-child {
+            border: none;
+        }
+
+        text-transform: uppercase;
+    }
+
+    transition: 0.2s;
+    ul {
+        position: absolute;
+    }
+    &.active {
+        z-index: 1;
+        ul {
+            opacity: 1;
+            background: $color-0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li {
+                display: flex;
+                @include fontType(7);
+                padding: 26px 0 30px 0;
+            }
+
+            .title {
+                @include fontType(7);
+                display: block;
+                padding: 26px 0 30px 0;
+                text-align: center;
+                text-decoration: none;
+                color: $color-0;
+                background-color: $color-9;
+                border: none;
+            }
+        }
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.64);
+    }
+}

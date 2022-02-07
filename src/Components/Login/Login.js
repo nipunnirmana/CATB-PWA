@@ -54,7 +54,10 @@ export default function Login() {
 
     const authListener = () => {
         const auth = getAuth();
-        onAuthStateChanged(auth, ({ uid = false } = {}) => {
+        onAuthStateChanged(auth, (data) => {
+
+            const { uid } = data || {};
+
             if (uid) {
                 localStorage.setItem('customer', JSON.stringify({ uid }));
             } else {

@@ -1,6 +1,7 @@
 
 export const IS_LOGGED_IN = 'IS_LOGGED_IN';
 export const IS_LOADING = 'IS_LOADING';
+export const OPTION_LIST = 'OPTION_LIST';
 
 const Reducer = (state, action) => {
     switch (action.type) {
@@ -14,6 +15,12 @@ const Reducer = (state, action) => {
                 ...state,
                 isLoading: action.payload
             };
+        case OPTION_LIST:
+            return {
+                ...state,
+                options: action.payload
+            };
+
         default:
             return state;
     }
