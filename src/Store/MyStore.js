@@ -2,10 +2,17 @@
 import React, { createContext, useReducer } from "react";
 import Reducer from './MyReducer';
 
+import tabs from '../Assets/mockData/tabs.json';
+
 
 const initialState = {
     isLoggedIn: localStorage.getItem('customer') || false,
     isLoading: false,
+    driver: {
+        firstName: 'Nipun',
+        lastName: 'Fernando',
+    },
+    tabs,
     options: {}
 };
 

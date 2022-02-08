@@ -1,0 +1,24 @@
+{
+    "scheduledTrips": [
+        {
+            "id": 1,
+            "day": "Today",
+            "trips": [
+                {
+                    "tripId": "CATB12101",
+                    "tripStatus": "Scheduled",
+                    "tripFromTo": "BIA →  Kollupitiya | Round Trip",
+                    "customer": "Mr. Amit Priyanka",
+                    "date": "Today",
+                    "time": "08:10 AM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "255 A02 Colombo - Galle,",
+                    "dropOffAddressLineTwo": "Colombo 03, Kollupitiya",
+                    "Passengers": "6 Pax , 1 Baby seat requested",
+                    "payment": "To be paid to the driver - Cash"
+                }
+            ]
+        }
+    ]
+}

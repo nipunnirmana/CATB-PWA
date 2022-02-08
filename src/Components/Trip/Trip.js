@@ -1,15 +1,17 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { OPTION_LIST, IS_LOADING } from '../../Store/MyReducer';
 import { Context } from '../../Store/MyStore';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import './Trip.scss';
 
 export default function Trip() {
 
-    const navigate = useNavigate();
+    const { id: paramId } = useParams();
 
-    const [, dispatch] = useContext(Context);
+    const navigate = useNavigate();
+    const [{ tabs: { scheduledTrips } }, dispatch] = useContext(Context);
+    const [{ trips: [currentTrip] }] = scheduledTrips;
 
     const [status, setStatus] = useState();
 
@@ -23,9 +25,7 @@ export default function Trip() {
 
     };
 
-    useEffect(() => {
-        mockStatusDta()
-    });
+
 
     const mockStatusDta = () => {
         const statusData = {
@@ -33,13 +33,21 @@ export default function Trip() {
             type: 'trip',
             onClickEvent: handleStatusChange,
             data: [
-                { name: 'firstOption', value: 1, selected: false },
-                { name: 'secondOption', value: 2, selected: true }
+                { name: 'SCHEDULED', value: 1, selected: false },
+                { name: 'ON MY WAY', value: 2, selected: true },
+                { name: 'AT PICKUP LOCATION', value: 3, selected: false },
+                { name: 'PASSENGERS ON BOARD', value: 4, selected: false },
+                { name: 'PAID AND TRIP COMPLETED', value: 5, selected: false }
             ]
         }
 
         setStatus(statusData)
     }
+
+    useEffect(() => {
+        mockStatusDta();
+        console.log(currentTrip);
+    }, []);
 
     const goBack = () => {
         navigate('/')
@@ -49,33 +57,57 @@ export default function Trip() {
         dispatch({ type: OPTION_LIST, payload: status });
     }
 
+    const {
+        tripStatus,
+        tripFromTo,
+        customer,
+        date,
+        time,
+        pickupAddressLineOne,
+        pickupAddressLineTwo,
+        dropOffAddressLineOne,
+        dropOffAddressLineTwo,
+        Passengers,
+        payment
+    } = currentTrip;
+
     return (
 
         <div className="trip-wrapper app-wrapper">
             <header className="trip-header app-header">
                 <div className="trip-header-inner">
                     <i className="icon-back" onClick={goBack}></i>
-                    <span className="trip-id">#CATB12101</span>
+                    <span className="trip-id">{`#${paramId}`}</span>
                 </div>
             </header>
 
             <div className="trip">
-                <div className="trip-status">Scheduled</div>
+                <div className="trip-status">{tripStatus}</div>
                 <div className="trip-basic-info">
-                    <div className="trip-start-end">BIA →  Kollupitiya | Round Trip</div>
-                    <div className="customer-name">Mr. Amit Priyanka</div>
+                    <div className="trip-start-end">{tripFromTo}</div>
+                    <div className="customer-name">{customer}</div>
                 </div>
                 <div className="trip-info">
-                    <div className="label">Pickup Date and Time </div>
-                    <div className="value">Today at 08:10 AM</div>
+                    <div className="label">Pickup Date and Time</div>
+                    <div className="value">{`${date} at ${time}`}</div>
                 </div>
                 <div className="trip-info">
-                    <div className="label">Pickup Date and Time </div>
-                    <div className="value">Today at 08:10 AM</div>
+                    <div className="label">Pickup Address</div>
+                    <div className="value"> {pickupAddressLineOne} <br /> {pickupAddressLineTwo}</div>
                 </div>
-
+                <div className="trip-info">
+                    <div className="label">Dropoff Address</div>
+                    <div className="value"> {dropOffAddressLineOne} <br /> {dropOffAddressLineTwo}</div>
+                </div>
+                <div className="trip-info">
+                    <div className="label">Passengers</div>
+                    <div className="value">{`${Passengers}`}</div>
+                </div>
+                <div className="trip-info">
+                    <div className="label">Payment</div>
+                    <div className="value">{`${payment}`}</div>
+                </div>
                 <span className="update-status" onClick={openStatusList}>UPDATE TRIP STATUS</span>
-
             </div>
 
         </div>
