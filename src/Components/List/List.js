@@ -10,7 +10,7 @@ export default function List({ tab }) {
     return (
         <div className="list-wrapper">
 
-            {currentTab.length ? tab === "documents" ? currentTab.data.map(({ id, name, expiresOn, daysLeft }) => {
+            {currentTab.length || tab === "documents" ? tab === "documents" ? currentTab.data.map(({ id, name, expiresOn, daysLeft }) => {
                 return <div className="list" key={id}>
                     <div className="title">{name}</div>
                     <div className="document">
