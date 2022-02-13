@@ -3,6 +3,9 @@ export const IS_LOGGED_IN = 'IS_LOGGED_IN';
 export const IS_LOADING = 'IS_LOADING';
 export const OPTION_LIST = 'OPTION_LIST';
 export const TABS = 'TABS';
+export const DRIVER = 'DRIVER';
+export const ON_GOING_TRIP = 'ON_GOING_TRIP';
+export const APP = 'APP';
 
 const Reducer = (state, action) => {
     switch (action.type) {
@@ -25,6 +28,21 @@ const Reducer = (state, action) => {
             return {
                 ...state,
                 tabs: action.payload
+            };
+        case DRIVER:
+            return {
+                ...state,
+                driver: action.payload
+            };
+        case ON_GOING_TRIP:
+            return {
+                ...state,
+                onGoingTrip: action.payload
+            };
+        case APP:
+            return {
+                ...state,
+                app: action.payload
             };
 
 

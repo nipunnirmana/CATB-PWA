@@ -1,42 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import { doc, getDoc } from "firebase/firestore";
-import '../../fire';
+import React, { useContext } from 'react';
+import { Context } from '../../Store/MyStore';
+import { Link } from "react-router-dom";
+import './List.scss';
 
-import { getFirestore } from 'firebase/firestore'
+export default function List({ tab }) {
 
-export default function List() {
-
-
-    const [firstName, setFirstName] = useState();
-    const currentHour = new Date().getHours();
-    const greeting = currentHour < 12 ? 'Good Morning' : currentHour < 18 ? 'Good Afternoon' : 'Good Evening';
-
-    useEffect(() => {
-
-
-        async function fetchData() {
-            const db = getFirestore();
-
-            const { uid = false } = JSON.parse(localStorage.getItem('customer')) || {};
-            const docRef = doc(db, "drivers", uid);
-            const docSnap = await getDoc(docRef);
-
-            if (docSnap.exists()) {
-                const { first_name } = docSnap.data();
-                setFirstName(first_name);
-            } else {
-                console.log("No such document!");
-            }
-        }
-        fetchData();
-
-
-    }, [])
+    const [{ tabs: { [tab]: currentTab } }] = useContext(Context);
 
     return (
-        <div>
-            <h1 onClick={() => window.location.reload()}>LOGGED IN PAGE </h1>
-            <h2> {firstName ? `${greeting} ${firstName}, You have` : 'Loading...'} </h2>
+        <div className="list-wrapper">
+
+            {currentTab.length ? tab === "documents" ? currentTab.data.map(({ id, name, expiresOn, daysLeft }) => {
+                return <div className="list" key={id}>
+                    <div className="title">{name}</div>
+                    <div className="document">
+                        <span className="days-left">{daysLeft} Left</span>
+                        <span className="expires-on">Expires on {expiresOn}</span>
+                    </div>
+                </div>
+            }) : currentTab.map(({ id, day, trips }) => {
+                return (<div className="list" key={id}>
+                    <div className="title">{day}</div>
+                    {trips.map(({ tripId, tripFromTo, time }) => (
+                        <Link className="trip" to={`trip/${tripId}`} id={tripId} key={tripId}>
+                            <span className="id">{`#${tripId}`}</span>
+                            <span className="start-end">{tripFromTo}</span>
+                            <span className="time">{time}</span>
+                            <i className="icon-more"></i>
+                        </Link>
+                    ))}
+                </div>);
+            }) : <div className="no-trips-wrapper">
+
+                <div className="no-trips-inner">
+                    <i className="icon-parked-car" />
+                    <span className="no-trips">NO TRIPS AVAILABLE</span>
+                </div>
+
+            </div>}
+
         </div>
     );
 }

@@ -10,8 +10,13 @@ export default function Trip() {
     const { id: paramId } = useParams();
 
     const navigate = useNavigate();
-    const [{ tabs: { scheduledTrips } }, dispatch] = useContext(Context);
-    const [{ trips: [currentTrip] }] = scheduledTrips;
+    const [{ tabs: { scheduledTrips, completedTrips }, onGoingTrip }, dispatch] = useContext(Context);
+
+    let allTrips = []
+    scheduledTrips.forEach(({ trips }) => trips.forEach(trip => allTrips.push(trip)));
+    completedTrips.forEach(({ trips }) => trips.forEach(trip => allTrips.push(trip)));
+    allTrips.push(onGoingTrip);
+    const currentTrip = allTrips.find(({ tripId }) => tripId === paramId) || {};
 
     const [status, setStatus] = useState();
 
@@ -46,7 +51,6 @@ export default function Trip() {
 
     useEffect(() => {
         mockStatusDta();
-        console.log(currentTrip);
     }, []);
 
     const goBack = () => {

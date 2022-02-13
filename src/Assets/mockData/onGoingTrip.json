@@ -1,0 +1,14 @@
+{
+    "tripId": "CATB12999",
+    "tripStatus": "At Pickup Location",
+    "tripFromTo": "BIA →  Colombo",
+    "customer": "Ms. Sahani Tharindi",
+    "date": "Today",
+    "time": "12:10 PM",
+    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+    "pickupAddressLineTwo": "Katunayake 11450",
+    "dropOffAddressLineOne": "Pettah 1100",
+    "dropOffAddressLineTwo": "Western Colombo",
+    "Passengers": "2 Pax",
+    "payment": "Paid - Online"
+}

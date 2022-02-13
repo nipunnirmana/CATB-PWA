@@ -2,12 +2,14 @@
 @import "../../Styles/mixins";
 @import "../../Styles/icons";
 
-.trip-list-wrapper {
+.list-wrapper {
     padding: 0 30px 18px 30px;
     overflow: auto;
     height: calc(100vh - 390px);
-    .trip-list-day {
-        .date {
+    text-align: center;
+    .list {
+        text-align: left;
+        .title {
             @include fontType(4);
             padding: 14px 0 16px 0;
             color: $color-4;
@@ -35,9 +37,33 @@
                 color: $color-12;
             }
         }
+        .document {
+            .days-left,
+            .expires-on {
+                display: block;
+                @include fontType(7);
+            }
+            margin-bottom: 18px;
+        }
         border-bottom: 1px solid $color-1;
-        &:last-of-type{
+        &:last-of-type {
             border-bottom: none;
         }
+    }
+}
+
+.no-trips-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100%;
+
+    .icon-parked-car {
+        font-size: 96px;
+    }
+    .no-trips {
+        display: block;
     }
 }

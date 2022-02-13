@@ -17,8 +17,180 @@
                     "dropOffAddressLineTwo": "Colombo 03, Kollupitiya",
                     "Passengers": "6 Pax , 1 Baby seat requested",
                     "payment": "To be paid to the driver - Cash"
+                },
+                {
+                    "tripId": "CATB12109",
+                    "tripStatus": "Scheduled",
+                    "tripFromTo": "BIA →  Colombo",
+                    "customer": "Ms. Sahani Tharindi",
+                    "date": "Today",
+                    "time": "12:10 PM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "Pettah 1100",
+                    "dropOffAddressLineTwo": "Western Colombo",
+                    "Passengers": "2 Pax",
+                    "payment": "Paid - Online"
+                },
+                {
+                    "tripId": "CATB12110",
+                    "tripStatus": "Scheduled",
+                    "tripFromTo": "BIA →  Pettah",
+                    "customer": "Mr. Randika Fernando",
+                    "date": "Today",
+                    "time": "03:10 PM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "Pettah 1100",
+                    "dropOffAddressLineTwo": "Western Colombo",
+                    "Passengers": "12 Pax",
+                    "payment": "Paid - Online"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "day": "Tomorrow",
+            "trips": [
+                {
+                    "tripId": "CATB12119",
+                    "tripStatus": "Scheduled",
+                    "tripFromTo": "BIA →  Kollupitiya | Round Trip",
+                    "customer": "Mr. Amit Priyanka",
+                    "date": "Tomorrow",
+                    "time": "09:10 AM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "255 A02 Colombo - Galle,",
+                    "dropOffAddressLineTwo": "Colombo 03, Kollupitiya",
+                    "Passengers": "6 Pax , 1 Baby seat requested",
+                    "payment": "To be paid to the driver - Cash"
+                },
+                {
+                    "tripId": "CATB12120",
+                    "tripStatus": "Scheduled",
+                    "tripFromTo": "BIA →  Negombo | Round Trip",
+                    "customer": "Ms. Indra Fernandopulle",
+                    "date": "Tomorrow",
+                    "time": "04:05 AM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "268/6 Walihena,",
+                    "dropOffAddressLineTwo": "Negombo Road, Kochcikade",
+                    "Passengers": "1 Pax , 2 Baby seats requested",
+                    "payment": "To be paid to the driver - Cash"
+                },
+                {
+                    "tripId": "CATB12131",
+                    "tripStatus": "Scheduled",
+                    "tripFromTo": "BIA →  Kollupitiya",
+                    "customer": "Mr. Indunil Ramayanake",
+                    "date": "Tomorrow",
+                    "time": "08:20PM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "255 A02 Colombo,",
+                    "dropOffAddressLineTwo": "Galle",
+                    "Passengers": "6 Pax , 1 Baby seat requested",
+                    "payment": "To be paid to the driver - Cash"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "day": "Jan 19",
+            "trips": [
+                {
+                    "tripId": "CATB12129",
+                    "tripStatus": "Scheduled",
+                    "tripFromTo": "BIA →  Kollupitiya | Round Trip",
+                    "customer": "Mr. Lakmal Samaharasinghe",
+                    "date": "Jan 19",
+                    "time": "05:10 AM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "568/6 Kurana Road,",
+                    "dropOffAddressLineTwo": "Negombo",
+                    "Passengers": "1 Pax",
+                    "payment": "To be paid to the driver - Cash"
+                },
+                {
+                    "tripId": "CATB12131",
+                    "tripStatus": "Scheduled",
+                    "tripFromTo": "BIA →  Kollupitiya | Round Trip",
+                    "customer": "Mr. Amit Priyanka",
+                    "date": "Today",
+                    "time": "09:10 AM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "255 A02 Colombo - Galle,",
+                    "dropOffAddressLineTwo": "Colombo 03, Kollupitiya",
+                    "Passengers": "6 Pax , 1 Baby seat requested",
+                    "payment": "To be paid to the driver - Cash"
+                },
+                {
+                    "tripId": "CATB12132",
+                    "tripStatus": "Scheduled",
+                    "tripFromTo": "BIA →  Kollupitiya | Round Trip",
+                    "customer": "Mr. Abrahim shah",
+                    "date": "Today",
+                    "time": "09:00 PM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "Kollupitiya",
+                    "dropOffAddressLineTwo": "Town , Next to ABC tower",
+                    "Passengers": "5 Pax , 3 Baby seat requested",
+                    "payment": "Paid - Online"
                 }
             ]
         }
-    ]
+    ],
+
+    "completedTrips": [],
+
+    "completedTripsA": [
+        {
+            "id": 1,
+            "day": "Today",
+            "trips": [
+                {
+                    "tripId": "CATB12198",
+                    "tripStatus": "Paid and Trip completed",
+                    "tripFromTo": "BIA →  Kollupitiya | Round Trip",
+                    "customer": "Mr. Razeen ab",
+                    "date": "Today",
+                    "time": "08:10 AM",
+                    "pickupAddressLineOne": "BIA, Canada Friendship Rd,",
+                    "pickupAddressLineTwo": "Katunayake 11450",
+                    "dropOffAddressLineOne": "255 A02 Colombo - Galle,",
+                    "dropOffAddressLineTwo": "Colombo 03, Kollupitiya",
+                    "Passengers": "16 Pax , 6 Baby seat requested",
+                    "payment": "Paid - Cash"
+                }
+            ]
+        }
+    ],
+    "documents": {
+        "numberOfExpiring": "02",
+        "data": [
+            {
+                "id": 1,
+                "name": "Driving License",
+                "expiresOn": "2022-03-10",
+                "daysLeft": "52 Days"
+            },
+            {
+                "id": 2,
+                "name": "Revenue License",
+                "expiresOn": "2022-07-16",
+                "daysLeft": "180 Days"
+            },
+            {
+                "id": 3,
+                "name": "Vehicle Insurance",
+                "expiresOn": "2023-02-24",
+                "daysLeft": "1 Year"
+            }
+        ]
+    }
 }

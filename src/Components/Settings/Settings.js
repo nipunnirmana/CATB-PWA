@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 
 export default function Settings() {
-    const [, dispatch] = useContext(Context);
+    const [{ tabs: { documents: { data = [] } = {} }, app: { version } }, dispatch] = useContext(Context);
     const navigate = useNavigate();
 
     const goBack = () => {
@@ -41,23 +41,19 @@ export default function Settings() {
             <div className="settings">
                 <div className="setting">
                     <div className="setting-name">Set Expiration dates</div>
-                    <div className="setting-field">
-                        <div className="label">Driving License</div>
-                        <input className="value" type="date" />
-                    </div>
-                    <div className="setting-field">
-                        <div className="label">Revenue License</div>
-                        <input className="value" type="date" />
-                    </div>
-                    <div className="setting-field">
-                        <div className="label">Vehicle Insurance</div>
-                        <input className="value" type="date" />
-                    </div>
+                    {data.map(({ name, expiresOn }) => (
+
+                        <div className="setting-field">
+                            <div className="label">{name}</div>
+                            <input className="value" type="date" value={expiresOn} />
+                        </div>
+
+                    ))}
                 </div>
 
                 <button className="logout-button" onClick={handleSignOut}>LOGOUT</button>
 
-                <span className="app-version">App V 1.000</span>
+                <span className="app-version">App V {version}</span>
 
             </div>
 

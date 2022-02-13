@@ -3,17 +3,18 @@ import React, { createContext, useReducer } from "react";
 import Reducer from './MyReducer';
 
 import tabs from '../Assets/mockData/tabs.json';
+import driver from '../Assets/mockData/driver.json';
+import onGoingTrip from '../Assets/mockData/onGoingTrip.json';
+import app from '../Assets/mockData/app.json';
 
 
 const initialState = {
     isLoggedIn: localStorage.getItem('customer') || false,
     isLoading: false,
-    driver: {
-        firstName: 'Nipun',
-        lastName: 'Fernando',
-    },
+    driver,
     tabs,
-    options: {}
+    onGoingTrip,
+    app
 };
 
 const Store = ({ children }) => {
