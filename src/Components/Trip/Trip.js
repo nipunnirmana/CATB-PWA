@@ -32,7 +32,7 @@ export default function Trip() {
 
 
 
-    const mockStatusDta = () => {
+    const mockStatusData = () => {
         const statusData = {
             title: 'UPDATE TRIP STATUS',
             type: 'trip',
@@ -50,7 +50,7 @@ export default function Trip() {
     }
 
     useEffect(() => {
-        mockStatusDta();
+        mockStatusData();
     }, []);
 
     const goBack = () => {
